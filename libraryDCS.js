@@ -69,7 +69,9 @@ document.getElementById('searchBookForm').addEventListener('submit', event => {
 // Delete Book
 document.getElementById('deleteBookForm').addEventListener('submit', event => {
   event.preventDefault();
+  
   const deleteTitle = document.getElementById('deleteTitle').value;
+  
   const bookIndex = library.findIndex(book => book.title.toLowerCase() === deleteTitle.toLowerCase());
 
   if (bookIndex !== -1) {
@@ -79,5 +81,6 @@ document.getElementById('deleteBookForm').addEventListener('submit', event => {
   } else {
     alert('Book not found.');
   }
+  
   document.getElementById('deleteBookForm').reset();
 });
